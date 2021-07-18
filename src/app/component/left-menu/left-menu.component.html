@@ -1,0 +1,34 @@
+<div class="sidenav_container" [@onSideNavChange]="sideNavState ? 'open' : 'close'">
+  <div fxLayout="column" fxLayoutGap="10px" style="height: 100%;">
+    <div class="user_menu">
+      <mat-nav-list>
+        <a mat-list-item>
+          <span class="jim" *ngIf="!sideNavState">SD</span>
+          <span [@animateText]="linkText ? 'show' : 'hide'">Sanket Deotarase</span>
+        </a>
+      </mat-nav-list>
+      <mat-divider></mat-divider>
+    </div>
+
+    <div>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let page of pages" (click)='navigate(page.link)'>
+          <mat-icon style="padding-right:5px;" matTooltip="{{page?.name}}" matTooltipPosition="right">{{page?.icon}}</mat-icon>
+          <span [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
+        </a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)='Logout()'>
+          <mat-icon style="transform: rotate(180deg);margin-left: 3px;" matTooltip="logout" matTooltipPosition="right">login</mat-icon>
+          <span [@animateText]="linkText ? 'show' : 'hide'"> Logout </span>
+        </a>
+      </mat-nav-list>
+    </div>
+  </div>
+  <span class="spacer"></span>
+  <div class="sidenavToggleBtn" fxLayout="row" fxLayoutAlign="end center" (click)="onSinenavToggle()">
+    <button mat-icon-button>
+      <mat-icon *ngIf="sideNavState">arrow_left</mat-icon>
+      <mat-icon *ngIf="!sideNavState">arrow_right</mat-icon>
+    </button>
+  </div>
+</div>

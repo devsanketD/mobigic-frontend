@@ -1,0 +1,22 @@
+
+.graph-row{
+    width: 98%;
+    margin: 8px;
+    height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main {
+    padding: 10px;
+}
+
+
+.example-card {
+    max-width: 200px;
+    max-height: 130px;
+  }
+
+  .file-input {
+    display: none;
+  }

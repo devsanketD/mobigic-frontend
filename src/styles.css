@@ -1,0 +1,22 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/ngx-toastr/toastr.css";
+
+body{
+    margin: 0px;
+}
+
+.mat-bottom-sheet-container {
+    padding: 45px 16px!important;
+    min-width: 100vw;
+    box-sizing: border-box;
+    display: block;
+    outline: 0;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+.mat-bottom-sheet-container-large {
+    min-width: 1000px!important;
+    max-width: calc(100vw - 256px);
+}
+

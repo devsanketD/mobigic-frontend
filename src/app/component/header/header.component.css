@@ -1,0 +1,8 @@
+.header {
+    padding: 10px 20px;
+    padding-left: 7px;
+    /* background: rgb(212, 42, 93); */
+    /* background-image: linear-gradient(176deg, #0a6ba3, #02ccf1); */
+    background-image: linear-gradient(176deg, #044f90, #02ccf1);
+    color: #fff;
+  }

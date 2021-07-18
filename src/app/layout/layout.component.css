@@ -1,0 +1,16 @@
+p {
+    font-family: Lato;
+  }
+  
+  .main_content {
+    width: 100%;
+
+    background: #efefef;
+  }
+
+  .hide-mat-sidenav-content{
+    margin-left: none!important;
+  }
+  .show-mat-sidenav-content{
+    margin-left: 63px
+  }
