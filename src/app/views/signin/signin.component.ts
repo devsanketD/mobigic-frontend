@@ -21,9 +21,9 @@ export class SigninComponent implements OnInit {
 
   initForm(): void {
     this.signinForm = new FormGroup({
-      name: new FormControl('a@gmail.com', [Validators.required]),
-      username: new FormControl('a@gmail.com', [Validators.required]),
-      password: new FormControl('ashish', [Validators.required])
+      name: new FormControl('', [Validators.required]),
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
     });
   }
   signin() {
