@@ -21,11 +21,11 @@ export class SigninComponent implements OnInit {
 
   initForm(): void {
     this.signinForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
     });
   }
+
   signin() {
     this.userService.login(this.signinForm.value)
       .subscribe((response: any) => {
@@ -37,24 +37,9 @@ export class SigninComponent implements OnInit {
           this.signinForm.patchValue({ password: '' })
         }
       })
-  }
+  }  
 
-  toggle() {
-    this.isNew = !this.isNew;
-    this.signinForm.reset();
-  }
-
-  signup() {
-    if (this.signinForm.valid) {
-      this.userService.signup(this.signinForm.value)
-        .subscribe((response: any) => {
-          // console.log(response)
-          if (response.success) {
-            this.toggle();
-          } else {
-            this.signinForm.patchValue({ password: '' })
-          }
-        })
-    }
+  moveTo(){
+    this.router.navigate(['/signup'])
   }
 }

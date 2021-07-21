@@ -11,7 +11,8 @@ export const environment = {
   getFiles: 'upload/getallfiles',
   uploadFiles: 'upload/uploadfile',
   deleteFiles: 'upload/deletefiles/{id}',
-  downloadFile: 'upload/downloadfiles'
+  downloadFile: 'upload/downloadfiles',
+  checkcode: 'upload/checkcode'
 };
 
 /*

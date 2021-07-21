@@ -37,4 +37,8 @@ export class UploadService {
     // console.log(`${environment.baseUrl}${environment.downloadFile}?id=${id}&code=${code}`)
     return this.client.get(`${environment.baseUrl}${environment.downloadFile}?id=${id}&code=${code}`, { 'headers': headers })
   }
+
+  checkCode(filename, code) {
+    return this.client.get(`${environment.baseUrl}${environment.checkcode}?name=${filename}&code=${code}`).toPromise();
+  }
 }

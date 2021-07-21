@@ -5,5 +5,6 @@ export const environment = {
   signup: 'user/signup',
   getFiles: 'upload/getallfiles',
   uploadFiles: 'upload/uploadfile',
-  deleteFiles: 'upload/deletefiles/{id}'
+  deleteFiles: 'upload/deletefiles/{id}',
+  checkcode: 'upload/checkcode'
 };

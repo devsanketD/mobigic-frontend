@@ -1,0 +1,41 @@
+
+  .main-div{    
+    background-color: whitesmoke;
+    /* background-image: url('../../../assets/images/loginBackground.jpg'); */
+  }
+  main {
+    background: whitesmoke;
+    height: 100vh;
+    width: 60%;
+    margin: 0 auto;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    resize: both;
+    overflow: auto;
+  }
+  
+  .outer-div {    
+    color: white;
+    width: 50%;
+    padding: 0px;
+    resize: both;
+    overflow: initial;
+  }
+
+  .example-card {
+    max-width: 400px;
+  }
+  
+  mat-form-field{
+      width: 100%;
+  }
+
+  mat-card-actions{
+      text-align: end;
+  }
+
+  .action-button{
+    width: 100%;
+    text-align: end;
+  }

@@ -21,11 +21,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ToastrModule } from 'ngx-toastr';
 import { DialogComponent } from './dialog/dialog.component';
+import { SignupComponent } from './views/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
     DialogComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,6 @@ import { DialogComponent } from './dialog/dialog.component';
   ],
   providers: [SidenavService],
   bootstrap: [AppComponent],
-  entryComponents: [DialogComponent]
 })
 export class AppModule {
   constructor(private router: Router) {

@@ -15,6 +15,5 @@ import { DialogComponent } from '../dialog/dialog.component';
     MaterialModule,
     FormsModule,
   ],
-  // entryComponents: [DialogComponent]
 })
 export class DashboardModule { }

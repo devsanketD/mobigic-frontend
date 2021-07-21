@@ -4,13 +4,6 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { UploadService } from '../services/upload.service';
 
 
-export interface PeriodicElement {
-  name: string;
-  link: number;
-  code: number;
-}
-
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -20,36 +13,34 @@ export class DashboardComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private uploadService: UploadService) { }
 
+  showLink = false;
 
-  displayedColumns: string[] = ['name', 'link', 'code', 'action'];
+  shareableLink = '';
+
+  displayedColumns: string[] = ['name', 'code', 'action'];
 
   dataSource
 
   fileName = '';
 
-
   ngOnInit() {
     this.getFiles()
   }
 
-  openDialog(record) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(DialogComponent, {
-      autoFocus: true,
-      data: {
-        id: record._id
-      }
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        const resp = JSON.parse(result);
-        console.log(resp)
-        window.open(`http://localhost:4000/${resp.data.filename}`, '_blank')
-      }
-    });
+  View(record) {
+    window.open(`http://localhost:4000/${record.filename}`, '_blank')
   }
+
+  shareLink(record) {
+    this.shareableLink = record.shareLink;
+    this.showLink = true;
+
+    setTimeout(() => {
+      this.shareableLink = '';
+      this.showLink = false;
+    }, 10000);
+  }
+
 
   getFiles() {
     this.uploadService.getFiles()
@@ -59,11 +50,12 @@ export class DashboardComponent implements OnInit {
             id: index + 1,
             _id: record.id,
             name: record.name,
-            link: `http://localhost:4000/${record.link}`,
+            filename: record.filename,
             code: record.code,
+            shareLink: record.shareLink
           }
         })
-        console.log('resp :', this.dataSource)
+        // console.log('resp :', this.dataSource)
       })
   }
 
@@ -76,7 +68,7 @@ export class DashboardComponent implements OnInit {
   onFileSelected(event) {
 
     const file: File = event.target.files[0];
-    console.log('file: ', file);
+    
     if (file) {
 
       this.fileName = file.name;
